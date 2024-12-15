@@ -9,8 +9,11 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = ContentViewModel()
+    
     var body: some View {
-        LoadableView(viewModel: ContentViewModel()) {
+        LoadableView(viewModel: viewModel) {
             Text("Data loaded successfully")
         }
     }
